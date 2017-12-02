@@ -1,0 +1,32 @@
+body {
+	display: flex;
+	flex-direction: column;
+	height: 50px;
+	padding: 20px;
+}
+.container {
+	display: flex;
+	align-items: center;
+	height: 50%;
+}
+.container.c1 {
+	text-align: center;
+}
+
+.button {
+	padding: 5px 10px;
+	font-size: 20px;
+	margin: 20px;
+	text-decoration: none;
+	color: hsla(0, 0%, 90%, 1);
+	background: cornflowerblue;
+	border-radius: 10px;
+	box-shadow: 2px 2px 15px -5px hsla(0, 0%, 0%, 1);
+}
+.button:hover {
+	background: linear-gradient(hsl(207.5, 84.8%, 51%), hsla(207, 84%, 62%, 1));
+	transition: all 0.2s linear;
+}
+.button.b1 {
+	display: inline-flex;
+}
