@@ -5,8 +5,8 @@ import './newTrip.css';
 const NewTrip = () => {
 
 	return (
-		<div class="container c1">
-			<a class="button b1" href="/new">create new trip</a>
+		<div className="container c1">
+			<a className="button b1" href="/new">create new trip</a>
 		</div>
 	);
 };

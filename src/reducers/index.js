@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
-import todos from './todos'
+import trips from './trips'
 
-const todoApp = combineReducers({
-	todos
+const expensor = combineReducers({
+	trips
 });
 
-export default todoApp;
+export default expensor;

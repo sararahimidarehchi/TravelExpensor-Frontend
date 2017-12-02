@@ -1,33 +1,31 @@
-import React from 'react'
-import { render } from 'react-dom'
-import { Provider } from 'react-redux'
-import { createStore } from 'redux'
-import reducers from './reducers'
+import React from 'react';
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware, compose } from 'redux';
+import reducers from './reducers';
 import './index.css';
-import Trips from './components/trips';
+import Trips from './components/trips.connected';
 import NewTrip from './components/newTrip';
 import registerServiceWorker from './registerServiceWorker';
+import { fetchAllTrips } from './actions/initialise';
 
-let store = createStore(reducers);
-const trips = [
-	{
-		name: 'a trip',
-		UUID: '234'
-	},
-	{
-		name: 'another trip',
-		UUID: 'dkeh'
-	}
-];
-//store.dispatch(initialize);
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const enhancers = composeEnhancers();
+
+const store = createStore(reducers, enhancers);
+
+fetchAllTrips().then(action => {
+	store.dispatch(action);
+});
+
 render(
 	<Provider store={store}>
 		<div className="expensor">
-			<Trips trips={trips}/>
+			<Trips/>
 			<NewTrip />
 		</div>
 	</Provider>,
 	document.getElementById('root')
 );
 
-registerServiceWorker();
+//registerServiceWorker();
