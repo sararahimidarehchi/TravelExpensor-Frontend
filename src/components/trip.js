@@ -4,10 +4,11 @@ import './trip.css';
 
 const Trip = ({ name, UUID }) => {
 
+	const href = '/trip/' + UUID;
 	return (
 		<li className="trip">
 			<a
-				href={UUID}
+				href={href}
 			>
 				{name}
 			</a>

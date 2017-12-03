@@ -9,3 +9,13 @@ export const fetchAllTrips = () => {
 			});
 		});
 };
+
+export const fetchTest = (dispatch, getState, api) => {
+	return fetch('http://localhost:8080/trips')
+			.then((res) => {
+				return dispatch({
+					type: 'INITIALISE_APP',
+					payload: JSON.parse(res._bodyText).entity.trips
+				});
+			});
+};

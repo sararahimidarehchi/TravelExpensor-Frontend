@@ -11,7 +11,4 @@ const NewTrip = () => {
 	);
 };
 
-NewTrip.propTypes = {
-};
-
 export default NewTrip;
